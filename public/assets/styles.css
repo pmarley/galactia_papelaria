@@ -1,0 +1,120 @@
+:root {
+    --main-bg-color: #4CAF50;
+    --text-color: #FFF;
+    --page-title-color: var(--main-bg-color);
+} 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+    color: var(--page-title-color);
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    border-radius: 5px;
+} 
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table {
+    width: inherit;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.table th {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+}
+.table tbody tr td:nth-child(1) {
+    padding: 0px;
+   text-align: center;
+   width: auto;
+}
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+form .form-btn {
+    display: flex;
+    width: inherit;
+    justify-content: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+.delete  {
+    background-color: #900C3F;
+    text-decoration: none;
+}
+.btn:hover, header a:hover {
+    background-color: #45a049;
+}
+.delete:hover {
+    background-color: #810a38;
+}
+.flex {
+    display: flex;
+}
+.justify-c {
+    justify-content: center;
+}
