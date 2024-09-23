@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/newCRUD_php/public/assets/styles.css">
+    <link rel="stylesheet" href="../../public/assets/styles.css">
     <title><?php echo $title ?? 'Meu Sistema'; ?></title>
 </head>
 <body>

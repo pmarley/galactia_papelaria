@@ -16,8 +16,10 @@ class Product {
     public function getAllProducts() {
         $query = "SELECT * FROM " . $this->table_name . " ORDER BY id ASC";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC); // Retorna todos os produtos como um array associativo
+        if($stmt->execute()) {
+            return $stmt->fetchAll(PDO::FETCH_ASSOC); 
+        }
+        return "Error to get all products";
     }
 
     public function createProduct() {
