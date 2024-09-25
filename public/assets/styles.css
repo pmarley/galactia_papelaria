@@ -3,6 +3,7 @@
     --main-bg-color-hover: rgb(41, 45, 87);
     --text-color: #FFF;
     --page-title-color: var(--main-bg-color);
+    
 } 
 * {
     margin: 0;
@@ -23,7 +24,7 @@ h1, h2 {
 
 a {
     text-decoration: none;
-    color: #333;
+    /* color: #333; */
     font-weight: bold;
     padding: 5px 10px;
     background-color: var(--main-bg-color);
@@ -58,8 +59,8 @@ a {
 }
 .table tbody tr td:nth-child(1) {
     padding: 0px;
-   text-align: center;
-   width: auto;
+    text-align: center;
+    width: auto;
 }
 .table tr:nth-child(even) {
     background-color: #f9f9f9;
@@ -119,7 +120,12 @@ form .form-btn {
 .justify-c {
     justify-content: center;
 }
+.justify-end {
+   justify-content: flex-end;
+}
 body #main-content {
     height: 100vh;
-    max-width: 1200px;
 }
+ header nav a {
+    margin-left: 5px;
+ }

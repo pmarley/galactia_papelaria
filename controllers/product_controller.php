@@ -12,7 +12,7 @@ class ProductController {
     }
 
     public function getAllProducts() {
-        return $this->product->getAllProducts(); // Retorna diretamente os produtos
+        return $this->product->getAllProducts();
     }
 
     public function createProduct($data) {
@@ -34,8 +34,7 @@ class ProductController {
         $this->product->description = $data['description'];
         $this->product->price = $data['price'];
         $this->product->quantity = $data['quantity'];
-
-        echo "<script>console.log('entrou updatedProduct')</script>";
+        
         return $this->product->updateProduct($this->product->id);
     }
 

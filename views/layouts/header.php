@@ -1,7 +1,7 @@
 <?php 
     $year = new DateTime('now');
     $allRights = $year->format('Y').' All rights reserved <b>P7CONSULTORIA</b>';
-    $cssPath = "/galactia_papelaria/public/assets/css.css";
+    $cssPath =  "/galactia_papelaria/public/assets/styles.css";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,9 +13,15 @@
 </head>
 <body>
     <header class="container">
-        <nav>
+        <nav class="flex justify-c">
+            <a href="/galactia_papelaria/public/index.php">Home</a>
+            
             <a href="/galactia_papelaria/views/product/index.php">Produtos</a>
             <a href="/galactia_papelaria/views/client/index.php">Clientes</a>
+            <a href="/galactia_papelaria/views/order/index.php">Pedidos</a>
         </nav>
     </header>
     <div class="container" id="main-content">
+
+
+            
