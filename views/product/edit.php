@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <form action="edit.php?id=<?php echo htmlspecialchars($product['id']); ?>" method="POST">
     <div class="flex justify-c">
         <button type="submit" class="btn">Atualizar</button>
-        <a  class="btn delete"href="delete.php?id=<?php echo $product['id']; ?>" onclick="return confirm('Tem certeza que deseja deletar este produto?');">Deletar</a>
+        <a  class="btn delete"href="delete.php?id=<?php echo $product['id']; ?>">Deletar</a>
     </div>
     
     <input type="hidden" name="id" value="<?php echo htmlspecialchars($product['id']); ?>">

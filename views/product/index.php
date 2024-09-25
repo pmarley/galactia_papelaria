@@ -1,25 +1,21 @@
 <?php
 require_once __DIR__ . '/../../controllers/product_controller.php';
 
-$title = "Lista de Produtos";
+$title = "Produtos";
 require_once __DIR__ . '/../../views/layouts/header.php';
 
 $productController = new ProductController();
 $products = $productController->getAllProducts();
 ?>
-
-<body>
-    <div class="container">
-        <h1>Produtos</h1>
+    <h1>Produtos</h1>
         <div class="flex justify-c">
-            <a href="create.php" class="btn justify-c">Cadastrar Novo Produto</a>
+            <a href="create.php" class="btn justify-c">Novo Produto</a>
         </div>
 
         <table class="table">
             <thead>
                 <tr>
                     <th>Ações</th>
-                    <th>ID</th>
                     <th>Nome</th>
                     <th>Descrição</th>
                     <th>Preço</th>
@@ -32,7 +28,7 @@ $products = $productController->getAllProducts();
                         <td>
                             <a href="edit.php?id=<?php echo $product['id']; ?>" class="btn">Editar</a>
                         </td>
-                        <td><?php echo $product['id']; ?></td>
+                        <!-- <td><?php echo $product['id']; ?></td> -->
                         <td><?php echo htmlspecialchars($product['name']); ?></td>
                         <td><?php echo htmlspecialchars($product['description']); ?></td>
                         <td><?php echo htmlspecialchars($product['price']); ?></td>
@@ -41,6 +37,4 @@ $products = $productController->getAllProducts();
                 <?php endforeach; ?>
             </tbody>
         </table>
-    </div>
-</body>
 <?php require_once __DIR__ . '/../../views/layouts/footer.php'; ?>

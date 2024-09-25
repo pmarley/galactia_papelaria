@@ -1,21 +1,21 @@
 <?php
-require_once __DIR__ . '/../../controllers/product_controller.php';
+require_once __DIR__ . '/../../controllers/client_controller.php';
 
-$title = "Cadastrar Produto";
+$title = "Cadastrar Cliente";
 require_once __DIR__ . '/../../views/layouts/header.php';
     
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $productController = new ProductController();
-    $productController->createProduct([
+    $clientController = new ClientController();
+    $clientController->createClient([
         'name' => $_POST['name'],
-        'description' => $_POST['description'],
-        'price' => $_POST['price'],
-        'quantity' => $_POST['quantity']
+        'email' => $_POST['email'],
+        'phone' => $_POST['phone'],
+        'address' => $_POST['address']
     ]);
     header("Location: index.php");
 }
 ?>
-    <h1>Cadastrar Produto</h1>
+    <h1>Cadastrar Novo Cliente</h1>
         <form action="create.php" method="POST">
             <div class="form-btn">
                 <button type="submit" class="btn">Cadastrar</button>
@@ -26,18 +26,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <div class="form-group">
-                <label for="description">Descrição:</label>
-                <textarea name="description"></textarea>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email">
             </div>
 
             <div class="form-group">
-                <label for="price">Preço:</label>
-                <input type="number" step="0.01" name="price" required>
+                <label for="phone">Telefone:</label>
+                <input type="number" name="phone" required>
             </div>
 
             <div class="form-group">
-                <label for="quantity">Quantidade:</label>
-                <input type="number" name="quantity" required>
+                <label for="address">Endereço:</label>
+                <input type="text" name="address">
             </div>
         </form>
         <a href="index.php" class="btn">Voltar</a>

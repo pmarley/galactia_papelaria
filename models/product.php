@@ -26,19 +26,16 @@ class Product {
         $query = "INSERT INTO " . $this->table_name . " SET name = :name, description = :description, price = :price, quantity = :quantity";
         $stmt = $this->conn->prepare($query);
 
-        // Sanitização dos dados
         $this->name = htmlspecialchars(strip_tags($this->name));
         $this->description = htmlspecialchars(strip_tags($this->description));
         $this->price = htmlspecialchars(strip_tags($this->price));
         $this->quantity = htmlspecialchars(strip_tags($this->quantity));
 
-        // Bind dos parâmetros
         $stmt->bindParam(':name', $this->name);
         $stmt->bindParam(':description', $this->description);
         $stmt->bindParam(':price', $this->price);
         $stmt->bindParam(':quantity', $this->quantity);
 
-        // Execução e retorno
         return $stmt->execute();
     }
 
@@ -57,20 +54,18 @@ class Product {
         $query = "UPDATE " . $this->table_name . " SET name = :name, description = :description, price = :price, quantity = :quantity WHERE id = :id";
         $stmt = $this->conn->prepare($query);
 
-        // Sanitização dos dados
+        
         $this->name = htmlspecialchars(strip_tags($this->name));
         $this->description = htmlspecialchars(strip_tags($this->description));
         $this->price = htmlspecialchars(strip_tags($this->price));
         $this->quantity = htmlspecialchars(strip_tags($this->quantity));
 
-        // Bind dos parâmetros
         $stmt->bindParam(':name', $this->name);
         $stmt->bindParam(':description', $this->description);
         $stmt->bindParam(':price', $this->price);
         $stmt->bindParam(':quantity', $this->quantity);
-        $stmt->bindParam(':id', $id); // Bind do ID do produto
-
-        // Execução e retorno
+        $stmt->bindParam(':id', $id); 
+        
         return $stmt->execute();
     }
 
@@ -79,7 +74,6 @@ class Product {
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(1, $id);
 
-        // Execução e retorno
         return $stmt->execute();
     }
 }
