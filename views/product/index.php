@@ -8,15 +8,15 @@ $productController = new ProductController();
 $products = $productController->getAllProducts();
 ?>
     <h1>Produtos</h1>
-        <div class="flex justify-c">
+        <div class="flex justify-c margin-b">
             <a href="create.php" class="btn justify-c">Novo Produto</a>
         </div>
 
         <table class="table">
             <thead>
                 <tr>
-                    <th>Ações</th>
-                    <th>Nome</th>
+                    <th></th>
+                    <th>Nome do Produto</th>
                     <th>Descrição</th>
                     <th>Preço</th>
                     <th>Quantidade</th>

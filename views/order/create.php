@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'order_name' => $_POST['order_name'],
         'price' => $_POST['price'],
         'cost' => $_POST['cost'],
+        'customer_id' => $_POST['customer_id'],
     ]);
     header("Location: index.php");
 }
@@ -20,8 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button type="submit" class="btn">Cadastrar</button>
             </div>
             <div class="form-group">
-                <label for="order_name">Nome do Pedido:</label>
+                <label for="order_name">Nome:</label>
                 <input type="text" name="order_name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="customer_id">Cliente:</label>
+                <input type="text" name="customer_id" required>
             </div>
 
             <div class="form-group">

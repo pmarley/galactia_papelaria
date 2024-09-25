@@ -22,6 +22,7 @@
             $this->order->order_name = $data['order_name'];
             $this->order->price = $data['price'];
             $this->order->cost = $data['cost'];
+            $this->order->customer_id = $data['customer_id'];
 
             return $this->order->createOrder();
         }
@@ -36,5 +37,13 @@
 
         public function deleteOrder($order_id) {
             return $this->order->deleteOrder($order_id);
+        }
+
+        public function getOrdersByCustomerId($customer_id) {
+            return $this->order->getOrdersByCustomerId($customer_id);
+        }
+
+        public function getCustomerNamesByCustomerId($customer_id) {
+            return $this->order->getCustomerNamesByCustomerId($customer_id);
         }
     }

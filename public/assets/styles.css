@@ -3,16 +3,19 @@
     --main-bg-color-hover: rgb(41, 45, 87);
     --text-color: #FFF;
     --page-title-color: var(--main-bg-color);
+    --main-content-bg-color: #FFF;
+    --header-bg-color: cornflowerblue;
     
 } 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lucida Sans', sans-serif;
+    transition: 0.5s ease;
 }
 
 body {
-    font-family: 'Lucida Sans', sans-serif;
     background-color: #0e0f1d;
     color: #333;
 }
@@ -24,8 +27,6 @@ h1, h2 {
 
 a {
     text-decoration: none;
-    /* color: #333; */
-    font-weight: bold;
     padding: 5px 10px;
     background-color: var(--main-bg-color);
     color: var(--text-color);
@@ -45,10 +46,11 @@ a {
     width: inherit;
     border-collapse: collapse;
     margin-bottom: 20px;
+    background-color: #FFF;
 }
 
 .table th, .table td {
-    border: 1px solid #ddd;
+    border: 1px solid var(--header-bg-color);
     padding: 12px;
     text-align: left;
 }
@@ -67,9 +69,19 @@ a {
 }
 
 .table tr:hover {
-    background-color: #f1f1f1;
+    background-color: var(--header-bg-color);
 }
 
+form {
+    max-width: 800px;
+    margin: auto;
+    padding: 50px;
+    background-color: var(--header-bg-color);
+    border-radius: 8px;
+}
+form label {
+    color : var(--text-color);
+}
 form .form-btn {
     display: flex;
     width: inherit;
@@ -91,6 +103,7 @@ form .form-btn {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    outline: none;
 }
 
 .btn {
@@ -107,6 +120,7 @@ form .form-btn {
 .delete  {
     background-color: #900C3F;
     text-decoration: none;
+    margin-left: 5px;
 }
 .btn:hover, header a:hover {
     background-color: var(--main-bg-color-hover);
@@ -125,7 +139,24 @@ form .form-btn {
 }
 body #main-content {
     height: 100vh;
+    background-color: var(--main-content-bg-color);
 }
  header nav a {
     margin-left: 5px;
  }
+ header {
+    background-color: var(--header-bg-color) !important;
+ }
+#total {
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    padding: 20px;
+    font-size: 20px;
+}
+
+.margin-t {
+    margin-top: 5px;
+}
+.margin-b {
+    margin-bottom: 5px;
+}

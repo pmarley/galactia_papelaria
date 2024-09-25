@@ -1,9 +1,9 @@
 <?php
-class Client {
+class Customer {
     private $conn;
-    private $table_name = "clients";
+    private $table_name = "customers";
 
-    public $client_id;
+    public $customer_id;
     public $name;
     public $email;
     public $phone;
@@ -14,16 +14,16 @@ class Client {
         $this->conn = $db;
     }
 
-    public function getAllClients() {
-        $query = "SELECT * FROM " . $this->table_name . " ORDER BY client_id ASC";
+    public function getAllCustomers() {
+        $query = "SELECT * FROM " . $this->table_name . " ORDER BY customer_id ASC";
         $stmt = $this->conn->prepare($query);
         if($stmt->execute()) {
             return $stmt->fetchAll(PDO::FETCH_ASSOC); 
         }
-        return "Error to get all clients";
+        return "Error to get all customers";
     }
 
-    public function createClient() {
+    public function createCustomer() {
         $query = "INSERT INTO " . $this->table_name . " SET name = :name, email = :email, phone = :phone, address = :address";
         $stmt = $this->conn->prepare($query);
 
@@ -40,19 +40,19 @@ class Client {
         return $stmt->execute();
     }
 
-    public function getClientById($id) {
-        $query = "SELECT * FROM " . $this->table_name . " WHERE client_id = ? LIMIT 0, 1";
+    public function getCustomerById($id) {
+        $query = "SELECT * FROM " . $this->table_name . " WHERE customer_id = ? LIMIT 0, 1";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(1, $id);
 
         if ($stmt->execute()) {
             return $stmt->fetch(PDO::FETCH_ASSOC);
         }
-        return null;
+        return false;
     }
 
-    public function updateClient($id) {
-        $query = "UPDATE " . $this->table_name . " SET name = :name, email = :email, phone = :phone, address = :address WHERE client_id = :client_id";
+    public function updateCustomer($id) {
+        $query = "UPDATE " . $this->table_name . " SET name = :name, email = :email, phone = :phone, address = :address WHERE customer_id = :customer_id";
         $stmt = $this->conn->prepare($query);
 
         $this->name = htmlspecialchars(strip_tags($this->name));
@@ -64,7 +64,7 @@ class Client {
         $stmt->bindParam(':email', $this->email);
         $stmt->bindParam(':phone', $this->phone);
         $stmt->bindParam(':address', $this->address);
-        $stmt->bindParam(':client_id', $id);
+        $stmt->bindParam(':customer_id', $id);
         
         if($stmt->execute()) {
             return true;
@@ -74,10 +74,10 @@ class Client {
         return false;
     }
 
-    public function deleteClient($id) {
-        $query = "DELETE FROM " . $this->table_name . " WHERE client_id= :client_id";
+    public function deleteCustomer($id) {
+        $query = "DELETE FROM " . $this->table_name . " WHERE customer_id= :customer_id";
         $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':client_id', $id);
+        $stmt->bindParam(':customer_id', $id);
 
         if($stmt->execute()) {
             return true;
